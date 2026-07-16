@@ -2,6 +2,10 @@ import numpy as np
 from numpy.random import default_rng 
 
 class NumPyCreator :
+
+	def __init__(self):
+		pass
+	
 	def from_list(self, lst, dtype=None):
 		"""takes a list or nested lists and returns its corresponding Numpy array"""
 		if not isinstance(lst, list):

@@ -1,6 +1,10 @@
 import numpy as np
 
 class ScrapBooker :
+
+	def __init__(self):
+		pass
+		
 	def crop(self, array, dim, position=(0,0)):
 		"""Crops the image as a rectangle via dim arguments (being the new height
 		and width of the image) from the coordinates given by position arguments."""
@@ -39,23 +43,13 @@ class ScrapBooker :
 			return None
 		return np.concatenate([array] * n, axis=axis)
 		# return np.repeat(array, n, axis=axis)
-	# def mosaic(self, array, dim):
-	# 	"""
-	# 	Makes a grid with multiple copies of the array. The dim argument specifies
-	# 	the number of repetition along each dimensions.
-	# 	Args:
-	# 	-----
-	# 	array:
-	# 	dim:numpy.ndarray.
-	# 	tuple of 2 integers.
-	# 	Return:
-	# 	-------
-	# 	new_arr:
-	# 	Nonemosaic numpy.ndarray.
-	# 	(combinaison of parameters not compatible).
-	# 	Raises:
-	# 	-------
-	# 	This function should not raise any Exception.
-	# 	"""
-	# 	if not isinstance(array, np.ndarray) or not isinstance(dim, tuple) :
-	# 		return None
+	def mosaic(self, array, dim):
+		"""
+		Makes a grid with multiple copies of the array. The dim argument specifies
+		the number of repetition along each dimensions.
+		"""
+		if not isinstance(array, np.ndarray) or not isinstance(dim, tuple) :
+			return None
+		if len(dim) != 2 or dim[0] < 1 or dim[1] < 1:
+			return None
+		return np.tile(array, dim)

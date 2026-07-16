@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class ImageProcessor :
+
+	def __init__(self):
+		pass
+		
 	def load(self, path): 
 		"""opens the PNG file specified by the path argument and returns an
 		array with the RGB values of the pixels in the image. It must display a message
