@@ -10,7 +10,8 @@ class FileLoader:
 		returns the dataset loaded as a pandas.DataFrame."""
 		if not isinstance(path, str):
 			return None
-		data = pd.read_csv(path, sep=';')
+		# data = pd.read_csv(path, sep=';')
+		data = pd.read_csv(path)
 		print(f"Loading dataset of dimensions {data.shape[0]} x {data.shape[1]}")
 		return data
 		
