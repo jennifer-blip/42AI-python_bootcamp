@@ -7,7 +7,7 @@ def proportion_by_sport(df, year, sport, gender) :
 	if not isinstance(df, pd.DataFrame) or not year in range(1896, 2025) or not isinstance(sport, str) or not gender in ("F", "M") :
 		return None
 	data=df[(df['Year']== year) & (df['Sex']==gender)]
-	sport = sport.capitalize()
+	sport = sport.lower().capitalize()
 	if not data.empty :
 		total = data.drop_duplicates(subset="Name").shape[0]
 		nb = data[data["Sport"]==sport].drop_duplicates(subset="Name").shape[0]
